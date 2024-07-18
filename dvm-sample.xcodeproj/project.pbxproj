@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AD934AA2C496887005DB1E5 /* dvm-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA80F052C48610800319BE9 /* dvm-sdk.xcframework */; };
+		5AD934AB2C496887005DB1E5 /* dvm-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDA80F052C48610800319BE9 /* dvm-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDA80EB42C3EE22F00319BE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB32C3EE22F00319BE9 /* AppDelegate.swift */; };
 		CDA80EB62C3EE22F00319BE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB52C3EE22F00319BE9 /* SceneDelegate.swift */; };
 		CDA80EB82C3EE22F00319BE9 /* PublicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB72C3EE22F00319BE9 /* PublicationViewController.swift */; };
@@ -15,8 +17,21 @@
 		CDA80EC02C3EE23000319BE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA80EBE2C3EE23000319BE9 /* LaunchScreen.storyboard */; };
 		CDA80EFA2C480B5700319BE9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EF92C480B5700319BE9 /* InitialViewController.swift */; };
 		CDA80EFC2C480F8900319BE9 /* PublicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EFB2C480F8900319BE9 /* PublicationsViewController.swift */; };
-		CDA80F062C48610800319BE9 /* dvm-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA80F052C48610800319BE9 /* dvm-sdk.xcframework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5AD934AC2C496887005DB1E5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AD934AB2C496887005DB1E5 /* dvm-sdk.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CDA80EB02C3EE22F00319BE9 /* dvm-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dvm-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA80F062C48610800319BE9 /* dvm-sdk.xcframework in Frameworks */,
+				5AD934AA2C496887005DB1E5 /* dvm-sdk.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +110,7 @@
 				CDA80EAC2C3EE22F00319BE9 /* Sources */,
 				CDA80EAD2C3EE22F00319BE9 /* Frameworks */,
 				CDA80EAE2C3EE22F00319BE9 /* Resources */,
+				5AD934AC2C496887005DB1E5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
