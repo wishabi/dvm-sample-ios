@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/dvm_sdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		K4b7o2SWDbenQf001PNfr/f4X/U=
+		sRbCejrtI2ROfGEfkh6Rlr671Y0=
 		</data>
 		<key>Modules/dvm_sdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/dvm_sdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		STMXCak1BfdlBbn9dI+znXGdlU0=
+		HpDjEgUfY8x+RFkLch4fhbzI1vY=
 		</data>
 		<key>Modules/dvm_sdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/dvm_sdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		K4b7o2SWDbenQf001PNfr/f4X/U=
+		sRbCejrtI2ROfGEfkh6Rlr671Y0=
 		</data>
 		<key>Modules/dvm_sdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/dvm_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		BQvfoJbB/LDrlrSaXmCHrQLv0x8=
+		8rG20j3MCYh7B4dJTVhmv+o99qU=
 		</data>
 		<key>Modules/dvm_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RPTelVq2cb+Qsc6TNMhFwqfEYwSpq6RV3FiRcBvFhbQ=
+			nQyrwuaTRLK1AG0d7O9Hh06ws9AQjCxCvFNFQbwNyQY=
 			</data>
 		</dict>
 		<key>Modules/dvm_sdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -95,7 +95,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LxpNWq+aTIiVskRe11fi8+gc6l8+/C/Z1b2OqfDmQ4c=
+			sPFw5MtWnplB26DSzkQKOEV1tXV1P+9m+Tdfct3iIOQ=
 			</data>
 		</dict>
 		<key>Modules/dvm_sdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
@@ -116,7 +116,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RPTelVq2cb+Qsc6TNMhFwqfEYwSpq6RV3FiRcBvFhbQ=
+			nQyrwuaTRLK1AG0d7O9Hh06ws9AQjCxCvFNFQbwNyQY=
 			</data>
 		</dict>
 		<key>Modules/dvm_sdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -130,7 +130,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J/Wu8LIi6be4v64a2tEld4n4aXg88eUx2OqOa4m1nEc=
+			Vzj4dZ/9cLPZbrnzU8pXnaUE3DvojFENRwlNImiQom4=
 			</data>
 		</dict>
 		<key>Modules/dvm_sdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>

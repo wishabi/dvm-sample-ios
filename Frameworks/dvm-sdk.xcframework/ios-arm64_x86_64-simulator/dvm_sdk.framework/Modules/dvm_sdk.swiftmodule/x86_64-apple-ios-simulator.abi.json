@@ -6746,371 +6746,371 @@
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 3338,
+      "offset": 3420,
       "length": 15,
       "value": "\"nextPageToken\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4488,
+      "offset": 4570,
       "length": 12,
       "value": "\"yyyy-MM-dd\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4552,
+      "offset": 4634,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4623,
+      "offset": 4705,
       "length": 13,
       "value": "\"Summer Sale\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4663,
+      "offset": 4745,
       "length": 35,
       "value": "\"Enjoy great discounts this summer\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4722,
+      "offset": 4804,
       "length": 32,
       "value": "\"https:\/\/example.com\/image1.jpg\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "Array",
-      "offset": 4786,
+      "offset": 4868,
       "length": 68,
       "value": "[\"https:\/\/example.com\/image2.jpg\", \"https:\/\/example.com\/image3.jpg\"]"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "Dictionary",
-      "offset": 4904,
+      "offset": 4986,
       "length": 36,
       "value": "[(\"key1\", \"value1\"), (\"key2\", \"value2\")]"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4975,
+      "offset": 5057,
       "length": 29,
       "value": "\"https:\/\/example.com\/bg1.jpg\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5035,
+      "offset": 5117,
       "length": 9,
       "value": "\"#FFFFFF\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5078,
+      "offset": 5160,
       "length": 4,
       "value": "\"en\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 5106,
+      "offset": 5188,
       "length": 3,
       "value": "101"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5183,
+      "offset": 5265,
       "length": 12,
       "value": "\"2024-06-01\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5245,
+      "offset": 5327,
       "length": 12,
       "value": "\"2024-08-31\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5305,
+      "offset": 5387,
       "length": 12,
       "value": "\"2024-06-01\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5363,
+      "offset": 5445,
       "length": 12,
       "value": "\"2024-08-31\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5409,
+      "offset": 5491,
       "length": 10,
       "value": "\"In-Store\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5438,
+      "offset": 5520,
       "length": 8,
       "value": "\"Active\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 5488,
+      "offset": 5570,
       "length": 4,
       "value": "1001"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5550,
+      "offset": 5632,
       "length": 3,
       "value": "\"2\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5621,
+      "offset": 5703,
       "length": 18,
       "value": "\"Winter Clearance\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5666,
+      "offset": 5748,
       "length": 36,
       "value": "\"Clearance sale on all winter items\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5726,
+      "offset": 5808,
       "length": 32,
       "value": "\"https:\/\/example.com\/image4.jpg\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "Array",
-      "offset": 5790,
+      "offset": 5872,
       "length": 68,
       "value": "[\"https:\/\/example.com\/image5.jpg\", \"https:\/\/example.com\/image6.jpg\"]"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "Dictionary",
-      "offset": 5908,
+      "offset": 5990,
       "length": 36,
       "value": "[(\"key1\", \"value1\"), (\"key2\", \"value2\")]"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5979,
+      "offset": 6061,
       "length": 29,
       "value": "\"https:\/\/example.com\/bg2.jpg\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6039,
+      "offset": 6121,
       "length": 9,
       "value": "\"#000000\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6082,
+      "offset": 6164,
       "length": 4,
       "value": "\"en\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 6110,
+      "offset": 6192,
       "length": 3,
       "value": "102"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6187,
+      "offset": 6269,
       "length": 12,
       "value": "\"2024-12-01\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6249,
+      "offset": 6331,
       "length": 12,
       "value": "\"2024-12-31\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6309,
+      "offset": 6391,
       "length": 12,
       "value": "\"2024-12-01\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6367,
+      "offset": 6449,
       "length": 12,
       "value": "\"2024-12-31\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6413,
+      "offset": 6495,
       "length": 8,
       "value": "\"Online\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6440,
+      "offset": 6522,
       "length": 8,
       "value": "\"Active\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 6490,
+      "offset": 6572,
       "length": 4,
       "value": "1002"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6552,
+      "offset": 6634,
       "length": 3,
       "value": "\"3\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6623,
+      "offset": 6705,
       "length": 17,
       "value": "\"Spring Festival\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6667,
+      "offset": 6749,
       "length": 44,
       "value": "\"Join our spring festival for amazing deals\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6735,
+      "offset": 6817,
       "length": 32,
       "value": "\"https:\/\/example.com\/image7.jpg\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "Array",
-      "offset": 6799,
+      "offset": 6881,
       "length": 68,
       "value": "[\"https:\/\/example.com\/image8.jpg\", \"https:\/\/example.com\/image9.jpg\"]"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "Dictionary",
-      "offset": 6917,
+      "offset": 6999,
       "length": 36,
       "value": "[(\"key1\", \"value1\"), (\"key2\", \"value2\")]"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6988,
+      "offset": 7070,
       "length": 29,
       "value": "\"https:\/\/example.com\/bg3.jpg\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7048,
+      "offset": 7130,
       "length": 9,
       "value": "\"#FF5733\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7091,
+      "offset": 7173,
       "length": 4,
       "value": "\"en\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 7119,
+      "offset": 7201,
       "length": 3,
       "value": "103"
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7196,
+      "offset": 7278,
       "length": 12,
       "value": "\"2024-03-01\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7258,
+      "offset": 7340,
       "length": 12,
       "value": "\"2024-03-31\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7318,
+      "offset": 7400,
       "length": 12,
       "value": "\"2024-03-01\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7376,
+      "offset": 7458,
       "length": 12,
       "value": "\"2024-03-31\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7422,
+      "offset": 7504,
       "length": 21,
       "value": "\"In-Store and Online\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "StringLiteral",
-      "offset": 7462,
+      "offset": 7544,
       "length": 8,
       "value": "\"Active\""
     },
     {
       "filePath": "\/Users\/matias.crespillo\/Development\/dvm-sdk-ios\/dvm-sdk\/DVMSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 7512,
+      "offset": 7594,
       "length": 4,
       "value": "1003"
     },
