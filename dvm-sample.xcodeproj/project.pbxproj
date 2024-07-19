@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AD934AB2C496887005DB1E5 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CD59A0D32C4ACF9C00908757 /* dvm-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEC911B2C4ACDDC00E702DF /* dvm-sdk.xcframework */; };
-		CD59A0D42C4ACF9C00908757 /* dvm-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDEC911B2C4ACDDC00E702DF /* dvm-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD7FD8C42C4AE32E0080EFB3 /* dvm-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7FD8C32C4AE32E0080EFB3 /* dvm-sdk.xcframework */; };
+		CD7FD8C52C4AE3770080EFB3 /* dvm-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD7FD8C32C4AE32E0080EFB3 /* dvm-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDA80EB42C3EE22F00319BE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB32C3EE22F00319BE9 /* AppDelegate.swift */; };
 		CDA80EB62C3EE22F00319BE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB52C3EE22F00319BE9 /* SceneDelegate.swift */; };
 		CDA80EB82C3EE22F00319BE9 /* PublicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB72C3EE22F00319BE9 /* PublicationViewController.swift */; };
@@ -28,8 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD59A0D42C4ACF9C00908757 /* dvm-sdk.xcframework in Embed Frameworks */,
-				5AD934AB2C496887005DB1E5 /* (null) in Embed Frameworks */,
+				CD7FD8C52C4AE3770080EFB3 /* dvm-sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD7FD8C32C4AE32E0080EFB3 /* dvm-sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "dvm-sdk.xcframework"; sourceTree = "<group>"; };
 		CDA80EB02C3EE22F00319BE9 /* dvm-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dvm-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA80EB32C3EE22F00319BE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA80EB52C3EE22F00319BE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +47,6 @@
 		CDA80EF92C480B5700319BE9 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		CDA80EFB2C480F8900319BE9 /* PublicationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsViewController.swift; sourceTree = "<group>"; };
 		CDEC91192C4AA64D00E702DF /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
-		CDEC911B2C4ACDDC00E702DF /* dvm-sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "dvm-sdk.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD59A0D32C4ACF9C00908757 /* dvm-sdk.xcframework in Frameworks */,
+				CD7FD8C42C4AE32E0080EFB3 /* dvm-sdk.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +98,7 @@
 		CDA80F072C48683900319BE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CDEC911B2C4ACDDC00E702DF /* dvm-sdk.xcframework */,
+				CD7FD8C32C4AE32E0080EFB3 /* dvm-sdk.xcframework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
