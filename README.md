@@ -12,9 +12,9 @@ This README describes how you can integrate with the Flipp Platform SDK.
 - [Delegate Methods](#delegate-methods)
 
 ## About the SDK <a name="about"></a>
-The Flipp Platform SDK allows mobile retailer apps to render flyers in two formats: in traditional print form or in a digital publication form. 
+The Flipp Platform SDK allows mobile retailer apps to render publications in two formats: in traditional print form (SFML) or in Digital Visual Merchandising form (DVM). 
 
-The digital publication format renders offers in a dynamic way that maintains responsiveness and merchandising flexibility, while also providing a host of features to allow users to interact with flyer offers.
+The DVM format renders publications in a dynamic way that maintains responsiveness and merchandising flexibility, while also providing a host of features to allow users to interact with offers.
 
 ## Quick Start <a name="quick-start"></a>
 
@@ -98,7 +98,7 @@ Example from `PublicationsViewController.swift`:
     ///   - publicationId: Publication identifier to render.
     ///   - merchantId: Merchant identifier for the publication.
     ///   - storeCode: Store code for the publication.
-    ///   - renderMode: Render mode for the publication (either `"SFML"` for traditional print flyer or `"DVM"` for digital publication).
+    ///   - renderMode: Render mode for the publication (either `"SFML"` for traditional print publication or `"DVM"` for digital publication).
     /// - Throws: DVMSDKError.sdkNotIntialized in case this function is called before initializing the SDK
     public static func createRenderingView(publicationId: String, merchantId: String, storeCode: String, renderMode: dvm_sdk.RenderMode) throws -> dvm_sdk.DVMRendererView
 ```
