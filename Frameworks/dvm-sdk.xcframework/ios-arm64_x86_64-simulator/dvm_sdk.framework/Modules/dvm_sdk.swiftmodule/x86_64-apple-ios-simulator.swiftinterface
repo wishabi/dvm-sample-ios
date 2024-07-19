@@ -1,0 +1,184 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name dvm_sdk
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Combine
+import CoreLocation
+import Foundation
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import dvm_sdk
+import os
+public struct Offer : Swift.Codable {
+  public let globalID: Swift.String?
+  public let merchantID: Swift.Int?
+  public let productIDS: [Swift.String]?
+  public let distributionContext: dvm_sdk.DistributionContext?
+  public let dates: dvm_sdk.Dates?
+  public let pricing: dvm_sdk.Pricing?
+  public let categories: dvm_sdk.Categories?
+  public let metadata: dvm_sdk.Metadata?
+  public let offerDetails: dvm_sdk.OfferDetails?
+  public let details: dvm_sdk.Offer.Details?
+  public let contentSource: Swift.String?
+  public let legacyIDS: dvm_sdk.Offer.LegacyIDS?
+  public struct Details : Swift.Codable {
+    public let en: dvm_sdk.Offer.DetailsEn?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct DetailsEn : Swift.Codable {
+    public let name: Swift.String?, description: Swift.String?
+    public let imageURL: Swift.String?
+    public let additionalInfo: dvm_sdk.Offer.AdditionalInfo?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct LegacyIDS : Swift.Codable {
+    public let flyer: dvm_sdk.Flyer?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct AdditionalInfo : Swift.Codable {
+    public let flyerRunID: Swift.Int?, flyerRunPageDiffGroupID: Swift.Int?
+    public let id1: Swift.String?, id2: Swift.String?, keywords: Swift.String?
+    public let pageItemID: Swift.Int?
+    public let sentAt: Swift.String?, sku: Swift.String?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Categories : Swift.Codable {
+  public let googleCategories: [dvm_sdk.Category]?, merchantCategories: [dvm_sdk.Category]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Category : Swift.Codable {
+  public let data: [Swift.String]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Flyer : Swift.Codable {
+  public let flyerItemIDMap: [Swift.String : Swift.String]?
+  public let flyerTypeID: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Metadata : Swift.Codable {
+  public let ttmURL: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OfferDetails : Swift.Codable {
+  public let en: dvm_sdk.OfferDetailsEn?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OfferDetailsEn : Swift.Codable {
+  public let saleStory: Swift.String?, postPriceText: Swift.String?, prePriceText: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Pricing : Swift.Codable {
+  public let offerType: Swift.String?
+  public let price: Swift.Double?
+  public let percentOff: Swift.Int?
+  public let conditionType: Swift.String?, purchaseMethod: Swift.String?
+  public let originalPriceEach: Swift.Bool?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DistributionContext : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public typealias PublicationsListCompletion = (dvm_sdk.PublicationsList, (any Swift.Error)?) -> Swift.Void
+@_hasMissingDesignatedInitializers public class DVMSDK {
+  public static func initialize(clientToken: Swift.String, userId: Swift.String?)
+  public static func updateUserId(_ userId: Swift.String)
+  public static func fetchPublicationsList(merchantId: Swift.String, storeCode: Swift.String, resultsCount: Swift.Int = 10, pageToken: Swift.String? = nil, completion: (dvm_sdk.PublicationsList, (any Swift.Error)?) -> Swift.Void)
+  public static func createRenderingView(globalId: Swift.String, renderingMode: dvm_sdk.RenderMode) throws -> dvm_sdk.DVMRendererView
+  @objc deinit
+}
+public struct PublicationsList {
+  public let publications: [dvm_sdk.Publication]
+  public let nextPageToken: Swift.String
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DVMRendererView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) weak public var rendererDelegate: (any dvm_sdk.DVMRendererDelegate)?
+  @_Concurrency.MainActor(unsafe) required public init(publicationId: Swift.String, merchantId: Swift.String, storeCode: Swift.String, renderMode: dvm_sdk.RenderMode = .dvm)
+  @objc deinit
+}
+extension dvm_sdk.DVMRendererView : WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: any Swift.Error)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: any Swift.Error)
+}
+public protocol DVMRendererDelegate : AnyObject {
+  func didTap(item: dvm_sdk.Offer)
+  func didFinishLoad()
+  func didFailToLoad(error: any Swift.Error)
+}
+public enum RenderMode : Swift.String, Swift.Codable {
+  case sfml
+  case dvm
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct Dates : Swift.Codable {
+  public let availableFrom: Foundation.Date
+  public let availableTo: Foundation.Date
+  public let validFrom: Foundation.Date
+  public let validTo: Foundation.Date
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Publication : Swift.Codable {
+  public let globalID: Swift.String
+  public let core: dvm_sdk.Core
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Core : Swift.Codable {
+  public let details: dvm_sdk.Details
+  public let language: Swift.String
+  public let merchantID: Swift.Int
+  public let dates: dvm_sdk.Dates
+  public let source: Swift.String, state: Swift.String
+  public let legacyIDS: dvm_sdk.LegacyIDS
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Details : Swift.Codable {
+  public let name: Swift.String
+  public let description: Swift.String
+  public let imageURL: Swift.String
+  public let additionalImages: [Swift.String]
+  public let additionalInfo: dvm_sdk.AdditionalInfo
+  public let backgroundImageURL: Swift.String
+  public let backgroundColor: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AdditionalInfo : Swift.Codable {
+  public let map: [Swift.String : Swift.String]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LegacyIDS : Swift.Codable {
+  public let flyerID: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension dvm_sdk.RenderMode : Swift.Equatable {}
+extension dvm_sdk.RenderMode : Swift.Hashable {}
+extension dvm_sdk.RenderMode : Swift.RawRepresentable {}
