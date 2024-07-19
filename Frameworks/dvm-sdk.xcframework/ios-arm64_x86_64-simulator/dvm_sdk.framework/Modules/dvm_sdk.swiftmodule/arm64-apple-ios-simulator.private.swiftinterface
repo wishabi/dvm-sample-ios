@@ -103,7 +103,7 @@ public typealias PublicationsListCompletion = (dvm_sdk.PublicationsList, (any Sw
   public static func initialize(clientToken: Swift.String, userId: Swift.String?)
   public static func updateUserId(_ userId: Swift.String)
   public static func fetchPublicationsList(merchantId: Swift.String, storeCode: Swift.String, resultsCount: Swift.Int = 10, pageToken: Swift.String? = nil, completion: (dvm_sdk.PublicationsList, (any Swift.Error)?) -> Swift.Void)
-  public static func createRenderingView(globalId: Swift.String, renderingMode: dvm_sdk.RenderMode) throws -> dvm_sdk.DVMRendererView
+  public static func createRenderingView(publicationId: Swift.String, merchantId: Swift.String, storeCode: Swift.String, renderMode: dvm_sdk.RenderMode) throws -> dvm_sdk.DVMRendererView
   @objc deinit
 }
 public struct PublicationsList {
@@ -112,7 +112,6 @@ public struct PublicationsList {
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DVMRendererView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) weak public var rendererDelegate: (any dvm_sdk.DVMRendererDelegate)?
-  @_Concurrency.MainActor(unsafe) required public init(publicationId: Swift.String, merchantId: Swift.String, storeCode: Swift.String, renderMode: dvm_sdk.RenderMode = .dvm)
   @objc deinit
 }
 extension dvm_sdk.DVMRendererView : WebKit.WKNavigationDelegate {

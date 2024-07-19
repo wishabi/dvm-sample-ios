@@ -14,16 +14,17 @@ class PublicationViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     guard let publicationID, let renderingMode, let merchantId, let storeCode else { return }
-    let rendererView = DVMRendererView(
+    if let rendererView = try? DVMSDK.createRenderingView(
       publicationId: publicationID,
       merchantId: merchantId,
       storeCode: storeCode,
       renderMode: renderingMode
-    )
-    rendererView.rendererDelegate = self
-    rendererView.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(rendererView)
-    self.rendererView = rendererView
+    ) {
+      rendererView.rendererDelegate = self
+      rendererView.translatesAutoresizingMaskIntoConstraints = false
+      view.addSubview(rendererView)
+      self.rendererView = rendererView
+    }
     setupConstraints()
   }
 
@@ -40,7 +41,6 @@ class PublicationViewController: UIViewController {
   func pushDetailsController(for offer: Offer) {
     let detailsController = ItemDetailsViewController(offer: offer)
     self.present(detailsController, animated: true)
-//    self.navigationController?.pushViewController(detailsController, animated: true)
   }
 }
 
