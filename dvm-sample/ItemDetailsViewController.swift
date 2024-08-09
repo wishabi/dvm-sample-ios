@@ -85,15 +85,14 @@ class ItemDetailsViewController: UIViewController {
   }
 
   override func viewDidLoad() {
-    view.backgroundColor = .white
+    view.backgroundColor = .appBackground
     super.viewDidLoad()
     setupViews()
 //    temporary until image permission are sorted out.
-//    if let urlString = offer.details?.en?.imageURL,
-//       let url = URL(string: urlString) {
-//      self.centralImageView.loadImage(from: url)
-//    }
-    self.centralImageView.image = UIImage(named: "sample")
+    if let urlString = offer.details?.en?.imageURL,
+       let url = URL(string: urlString) {
+      self.centralImageView.loadImage(from: url)
+    }
 
     if let name = offer.details?.en?.name {
       self.titleLabel.text = name

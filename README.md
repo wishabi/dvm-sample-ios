@@ -3,7 +3,7 @@
 This README describes how you can integrate with the Flipp Platform SDK. 
 
 > [!WARNING]
-> **This sample app uses the alpha version of the Flipp Platform SDK. The features and delegate methods are currently hardcoded.**
+> **This sample app uses the alpha version of the Flipp Platform SDK. Some returned information is still hardcoded on the backend.**
 
 ## Table of Contents
 - [About the SDK](#about)
@@ -22,11 +22,22 @@ The DVM format renders publications in a dynamic way that maintains responsivene
 
 2) Open `dvm-sample.xcodeproj` in Xcode.
 
-3) Build and run the app.
+3) Insert the SDK key provided by Flipp in `AppDelegate` line 10.
+> [!WARNING]
+>  If you run the application without this key, it will crash indicating the issue.
+```swift
+// This is the key that will be used to initialize the SDK, please replace the value with the key provided by Flipp.
+  private let SDKKey = ""
+```
+
+4) Build and run the app.
 
 ## How to Integrate the SDK <a name="how-to"></a>
 
-1) Add the `dvm-sdk.xcframework` framework to your project.
+1) Add the DVM SDK as a dependency through SPM (Swift Package Manager).
+ * Navigate to Package Dependecies > Click '+' to add a package.
+ * Enter the SDK repository's URL `https://github.com/wishabi/dvm-ios-binaries/` as the package URL.
+ * Select the package when prompted.
 
 3) Initialize the SDK early in your application life cycle by providing a `clientToken` key, and an optional `userId` (currently the key is not used in the alpha). 
 ```swift

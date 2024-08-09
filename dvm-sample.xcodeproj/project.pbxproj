@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD7FD8C42C4AE32E0080EFB3 /* dvm-sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7FD8C32C4AE32E0080EFB3 /* dvm-sdk.xcframework */; };
-		CD7FD8C52C4AE3770080EFB3 /* dvm-sdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD7FD8C32C4AE32E0080EFB3 /* dvm-sdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD6965582C5BAADE007E8D73 /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6965572C5BAADE007E8D73 /* BorderedTextField.swift */; };
+		CD69655A2C5BB245007E8D73 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6965592C5BB245007E8D73 /* Style.swift */; };
 		CDA80EB42C3EE22F00319BE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB32C3EE22F00319BE9 /* AppDelegate.swift */; };
 		CDA80EB62C3EE22F00319BE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB52C3EE22F00319BE9 /* SceneDelegate.swift */; };
 		CDA80EB82C3EE22F00319BE9 /* PublicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB72C3EE22F00319BE9 /* PublicationViewController.swift */; };
@@ -17,17 +17,17 @@
 		CDA80EC02C3EE23000319BE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA80EBE2C3EE23000319BE9 /* LaunchScreen.storyboard */; };
 		CDA80EFA2C480B5700319BE9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EF92C480B5700319BE9 /* InitialViewController.swift */; };
 		CDA80EFC2C480F8900319BE9 /* PublicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EFB2C480F8900319BE9 /* PublicationsViewController.swift */; };
+		CDC88BC92C666FC4002EE51C /* dmv-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = CDC88BC82C666FC4002EE51C /* dmv-sdk */; };
 		CDEC911A2C4AA64D00E702DF /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC91192C4AA64D00E702DF /* ItemDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5AD934AC2C496887005DB1E5 /* Embed Frameworks */ = {
+		CD4D719B2C654E2E0027BD3F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD7FD8C52C4AE3770080EFB3 /* dvm-sdk.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,7 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CD7FD8C32C4AE32E0080EFB3 /* dvm-sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "dvm-sdk.xcframework"; sourceTree = "<group>"; };
+		CD6965572C5BAADE007E8D73 /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
+		CD6965592C5BB245007E8D73 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		CDA80EB02C3EE22F00319BE9 /* dvm-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dvm-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA80EB32C3EE22F00319BE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA80EB52C3EE22F00319BE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,19 +55,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7FD8C42C4AE32E0080EFB3 /* dvm-sdk.xcframework in Frameworks */,
+				CDC88BC92C666FC4002EE51C /* dmv-sdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD6965562C5BAACC007E8D73 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CD6965572C5BAADE007E8D73 /* BorderedTextField.swift */,
+				CD6965592C5BB245007E8D73 /* Style.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CD69656D2C5BD286007E8D73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CDA80EA72C3EE22F00319BE9 = {
 			isa = PBXGroup;
 			children = (
-				CDA80F072C48683900319BE9 /* Frameworks */,
 				CDA80EB22C3EE22F00319BE9 /* dvm-sample */,
 				CDA80EB12C3EE22F00319BE9 /* Products */,
+				CD69656D2C5BD286007E8D73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +98,7 @@
 		CDA80EB22C3EE22F00319BE9 /* dvm-sample */ = {
 			isa = PBXGroup;
 			children = (
+				CD6965562C5BAACC007E8D73 /* UI */,
 				CDEC91192C4AA64D00E702DF /* ItemDetailsViewController.swift */,
 				CDA80EB32C3EE22F00319BE9 /* AppDelegate.swift */,
 				CDA80EB52C3EE22F00319BE9 /* SceneDelegate.swift */,
@@ -95,14 +113,6 @@
 			path = "dvm-sample";
 			sourceTree = "<group>";
 		};
-		CDA80F072C48683900319BE9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CD7FD8C32C4AE32E0080EFB3 /* dvm-sdk.xcframework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,13 +123,16 @@
 				CDA80EAC2C3EE22F00319BE9 /* Sources */,
 				CDA80EAD2C3EE22F00319BE9 /* Frameworks */,
 				CDA80EAE2C3EE22F00319BE9 /* Resources */,
-				5AD934AC2C496887005DB1E5 /* Embed Frameworks */,
+				CD4D719B2C654E2E0027BD3F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "dvm-sample";
+			packageProductDependencies = (
+				CDC88BC82C666FC4002EE51C /* dmv-sdk */,
+			);
 			productName = "dvm-sample";
 			productReference = CDA80EB02C3EE22F00319BE9 /* dvm-sample.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +161,9 @@
 				Base,
 			);
 			mainGroup = CDA80EA72C3EE22F00319BE9;
+			packageReferences = (
+				CDC88BC72C666FC4002EE51C /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */,
+			);
 			productRefGroup = CDA80EB12C3EE22F00319BE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,7 +196,9 @@
 				CDEC911A2C4AA64D00E702DF /* ItemDetailsViewController.swift in Sources */,
 				CDA80EB42C3EE22F00319BE9 /* AppDelegate.swift in Sources */,
 				CDA80EB62C3EE22F00319BE9 /* SceneDelegate.swift in Sources */,
+				CD6965582C5BAADE007E8D73 /* BorderedTextField.swift in Sources */,
 				CDA80EFA2C480B5700319BE9 /* InitialViewController.swift in Sources */,
+				CD69655A2C5BB245007E8D73 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +433,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDC88BC72C666FC4002EE51C /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wishabi/dvm-ios-binaries/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDC88BC82C666FC4002EE51C /* dmv-sdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDC88BC72C666FC4002EE51C /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */;
+			productName = "dmv-sdk";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CDA80EA82C3EE22F00319BE9 /* Project object */;
 }

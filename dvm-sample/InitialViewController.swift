@@ -7,15 +7,15 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
     let merchantLabel: UILabel = {
       let label = UILabel()
       label.text = "Merchant"
+      label.textColor = .default5
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
 
     let merchantTextField: UITextField = {
-      let textField = UITextField()
+      let textField = BorderedTextField()
       textField.placeholder = "Enter merchant"
-      textField.text = "2271"
-      textField.borderStyle = .roundedRect
+      textField.text = "2018"
       textField.translatesAutoresizingMaskIntoConstraints = false
       return textField
     }()
@@ -23,29 +23,39 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
     let storeCodeLabel: UILabel = {
       let label = UILabel()
       label.text = "Store Code"
+      label.textColor = .default5
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
 
     let storeCodeTextField: UITextField = {
-      let textField = UITextField()
+      let textField = BorderedTextField()
       textField.placeholder = "Enter store code"
-      textField.text = "1009"
-      textField.borderStyle = .roundedRect
+      textField.text = "1019"
       textField.translatesAutoresizingMaskIntoConstraints = false
       return textField
     }()
 
     let loadPublicationsButton: UIButton = {
-      let button = UIButton(type: .roundedRect)
+      let button = UIButton(frame: .zero)
+      button.titleLabel?.font = UIFont.boldSystemFont(ofSize: .medium)
+      button.setTitleColor(.default0, for: .normal)
+      button.tintColor = .default0
       button.setTitle("Load Publications", for: .normal)
       button.translatesAutoresizingMaskIntoConstraints = false
+      button.backgroundColor = .primary3
+      button.layer.cornerRadius = .extraExtraSmall
+      button.contentEdgeInsets = UIEdgeInsets(
+        top: 8,
+        left: 12,
+        bottom: 8,
+        right: button.contentEdgeInsets.right + 12)
       return button
     }()
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      view.backgroundColor = .white
+      view.backgroundColor = .appBackground
 
       setupViews()
       setupConstraints()
@@ -107,10 +117,11 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
     }
 
     let publicationsViewController = PublicationsViewController()
-    publicationsViewController.view.backgroundColor = .white
+    publicationsViewController.view.backgroundColor = .appBackground
     publicationsViewController.title = "Publications"
     publicationsViewController.merchantID = merchant
     publicationsViewController.storeCode = storeCode
+    navigationController?.navigationBar.barTintColor = .default0
     navigationController?.pushViewController(publicationsViewController, animated: true)
   }
 }
