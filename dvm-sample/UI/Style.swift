@@ -1,9 +1,4 @@
-//
-//  Style.swift
-//  dvm-sample
-//
-//  Created by Matías Crespillo on 01/08/2024.
-//
+// Copyright © 2024 Flipp. All rights reserved.
 
 import UIKit
 

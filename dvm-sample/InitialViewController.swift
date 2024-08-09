@@ -15,7 +15,7 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
     let merchantTextField: UITextField = {
       let textField = BorderedTextField()
       textField.placeholder = "Enter merchant"
-      textField.text = "133769420"
+      textField.text = "2018"
       textField.translatesAutoresizingMaskIntoConstraints = false
       return textField
     }()
@@ -31,7 +31,7 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
     let storeCodeTextField: UITextField = {
       let textField = BorderedTextField()
       textField.placeholder = "Enter store code"
-      textField.text = "H0H store"
+      textField.text = "1019"
       textField.translatesAutoresizingMaskIntoConstraints = false
       return textField
     }()
