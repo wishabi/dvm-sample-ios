@@ -22,7 +22,13 @@ The DVM format renders publications in a dynamic way that maintains responsivene
 
 2) Open `dvm-sample.xcodeproj` in Xcode.
 
-3) Build and run the app.
+3) Insert the SDK key provided by flipp in `AppDelegate`.
+```swift
+// This is the key that will be used to initialize the SDK, please replace the value with the key provided by Flipp.
+  private let SDKKey = ""
+```
+
+4) Build and run the app.
 
 ## How to Integrate the SDK <a name="how-to"></a>
 

@@ -4,7 +4,7 @@ import dvm_sdk
 import UIKit
 
 class PublicationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  var publications: [Publication] = []
+  var publications: PublicationsList?
   var merchantID: String?
   var storeCode: String?
 
@@ -17,15 +17,15 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
 
   let tableView: UITableView = {
     let tableView = UITableView()
+    tableView.backgroundColor = .clear
     tableView.translatesAutoresizingMaskIntoConstraints = false
     return tableView
   }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .white
+    view.backgroundColor = .appBackground
     title = "Publications"
-
     tableView.dataSource = self
     tableView.delegate = self
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -36,18 +36,13 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
 
   override func viewDidAppear(_ animated: Bool) {
     guard let merchantID, let storeCode else { return }
-    DVMSDK.fetchPublicationsList(
-      merchantId: merchantID,
-      storeCode: storeCode) {[weak self] list, error in
-        if let error {
-          //inform error or add retry logic.
-          print(error)
-          return
-        }
-        self?.publications = list.publications
-        self?.tableView.reloadData()
-        // store next page token for infinite scroll
+    Task.detached {
+      let publications = try? await DVMSDK.fetchPublicationsList(merchantId: merchantID, storeCode: storeCode)
+      await MainActor.run {
+        self.publications = publications
+        self.tableView.reloadData()
       }
+    }
   }
 
   func setupConstraints() {
@@ -65,13 +60,19 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
   // MARK: - UITableViewDataSource
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return publications.count
+    return publications?.publications.count ?? 0
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let publications = publications?.publications else {
+      return UITableViewCell()
+    }
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+    cell.backgroundColor = .default0
+    cell.textLabel?.textColor = .default5
     let publication = publications[indexPath.row]
-    cell.textLabel?.text = publication.core.details.name
+    cell.textLabel?.text = publication.details.name
     cell.detailTextLabel?.text = publication.globalID
     return cell
   }
@@ -79,6 +80,9 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
   // MARK: - UITableViewDelegate
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let publications = publications?.publications else {
+      return 
+    }
     tableView.deselectRow(at: indexPath, animated: true)
     let publication = publications[indexPath.row]
     let publicationVC = PublicationViewController()
@@ -87,6 +91,11 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
     publicationVC.merchantId = self.merchantID
     publicationVC.storeCode = self.storeCode
     publicationVC.renderingMode = renderingMode
+    publicationVC.view.backgroundColor = .red
     navigationController?.pushViewController(publicationVC, animated: true)
+  }
+
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "Publications"
   }
 }

@@ -3,12 +3,25 @@
 import dvm_sdk
 import UIKit
 
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  // This is the key that will be used to initialize the SDK, please replace the value with the key provided by Flipp.
+  private let SDKKey = "super-secure-and-secret-api-key-for-dvm"
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    DVMSDK.initialize(clientToken: "experimental-key-that-is-super-secret-and-secure-prd", userId: nil)
+    if SDKKey.isEmpty {
+      fatalError("The SDK Key has not been set")
+    }
+    DVMSDK.initialize(clientToken: SDKKey, userId: nil)
+    let navBarAppearance = UINavigationBarAppearance()
+    navBarAppearance.configureWithOpaqueBackground()
+    navBarAppearance.backgroundColor = .appBackground
+    UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+    UINavigationBar.appearance().backgroundColor = .appBackground
+    UINavigationBar.appearance().tintColor = .default5
+
     return true
   }
 
