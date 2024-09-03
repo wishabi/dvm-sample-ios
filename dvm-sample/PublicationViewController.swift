@@ -1,31 +1,52 @@
 // Copyright © 2024 Flipp. All rights reserved.
 
 import dvm_sdk
+import OSLog
 import UIKit
 
 class PublicationViewController: UIViewController {
+  static let logger = Logger(
+    subsystem: Bundle.main.bundleIdentifier!,
+    category: String(describing: PublicationViewController.self))
+
   var renderingMode: RenderMode?
   var publicationID: String?
   var merchantId: String?
   var storeCode: String?
+  lazy var spinner = UIActivityIndicatorView()
 
   private var rendererView: DVMRendererView?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    guard let publicationID, let renderingMode, let merchantId, let storeCode else { return }
+
+    title = "Publication"
+    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: spinner)
+    spinner.startAnimating()
+
+    guard let publicationID,
+          let renderingMode,
+          let merchantId,
+          let storeCode else {
+      spinner.stopAnimating()
+      return
+    }
+
     if let rendererView = try? DVMSDK.createRenderingView(
       publicationId: publicationID,
       merchantId: merchantId,
       storeCode: storeCode,
-      renderMode: renderingMode
+      renderMode: renderingMode,
+      shouldPersistWebsiteDataToDisk: false
     ) {
       rendererView.rendererDelegate = self
       rendererView.translatesAutoresizingMaskIntoConstraints = false
       view.addSubview(rendererView)
       self.rendererView = rendererView
+      setupConstraints()
     }
-    setupConstraints()
+    
+    spinner.stopAnimating()
   }
 
   private func setupConstraints() {
@@ -39,21 +60,28 @@ class PublicationViewController: UIViewController {
   }
 
   func pushDetailsController(for offer: Offer) {
-    let detailsController = ItemDetailsViewController(offer: offer)
-    self.present(detailsController, animated: true)
+    let detailsController = OfferDetailsViewHostController(offer: offer)
+    self.present(
+      UINavigationController(rootViewController: detailsController),
+      animated: true)
   }
 }
 
 extension PublicationViewController: DVMRendererDelegate {
-  func didTap(item: Offer) {
-    self.pushDetailsController(for: item)
+  func didTap(result: Result<dvm_sdk.Offer, dvm_sdk.DVMSDKError>) {
+    switch result {
+    case .success(let offer):
+      self.pushDetailsController(for: offer)
+    case .failure(let error):
+      Self.logger.error("Error tapping on offer: \(error.localizedDescription)")
+    }
   }
 
   func didFinishLoad() {
-
+    Self.logger.debug("Did finish load")
   }
 
   func didFailToLoad(error: Error) {
-    //inform error or implement retry logic.
+    Self.logger.error("Failed to load publication: \(error.localizedDescription)")
   }
 }

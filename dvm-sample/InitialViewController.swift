@@ -31,7 +31,7 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
     let storeCodeTextField: UITextField = {
       let textField = BorderedTextField()
       textField.placeholder = "Enter store code"
-      textField.text = "1019"
+      textField.text = "1174"
       textField.translatesAutoresizingMaskIntoConstraints = false
       return textField
     }()
@@ -117,8 +117,6 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
     }
 
     let publicationsViewController = PublicationsViewController()
-    publicationsViewController.view.backgroundColor = .appBackground
-    publicationsViewController.title = "Publications"
     publicationsViewController.merchantID = merchant
     publicationsViewController.storeCode = storeCode
     navigationController?.navigationBar.barTintColor = .default0
