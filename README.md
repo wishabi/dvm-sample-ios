@@ -79,7 +79,7 @@ DVMSDK.initialize(clientToken: "experimental-key-that-is-super-secret-and-secure
 /// - Parameters:
 ///   - merchantId: Merchant identifier to retrieve the publications for.
 ///   - storeCode: Store identifier for the publications.
-///   - language: The desired language.
+///   - language: The 2 characters ISO language code used to render the publication.
 ///   - resultsCount: number of results per page, defaults to 10.
 ///   - pageToken: token for pagination, needed to fetch subsequent results.
 ///   - completion: closure that will be called with results.
@@ -112,15 +112,17 @@ await MainActor.run { [weak self] in
 ///   - merchantId: Merchant id for the publication.
 ///   - storeCode: Store code for the publication.
 ///   - renderMode: Store identifier for the publications.
+///   - language: The 2 characters ISO language code used to render the publication.
 ///   - shouldPersistWebsiteDataToDisk: Whether website data should persist to disk (default is false).
 /// - Throws: DVMSDKError.sdkNotIntialized in case this function is called before initializing the SDK
 /// - Returns: A DVM renderer view.
 public static func createRenderingView(
-  publicationId: String,
-  merchantId: String,
-  storeCode: String,
-  renderMode: RenderMode,
-  shouldPersistWebsiteDataToDisk: Bool = false
+   publicationId: String,
+   merchantId: String,
+   storeCode: String,
+   renderMode: RenderMode,
+   language: String?,
+   shouldPersistWebsiteDataToDisk: Bool = false
 ) throws -> DVMRendererView
 ```
 
@@ -132,7 +134,8 @@ Example for using `createRenderingView` within
       publicationId: publicationID,
       merchantId: merchantId,
       storeCode: storeCode,
-      renderMode: renderingMode
+      renderMode: renderingMode,
+      language: Locale.preferredLanguageCode() ?? "en"
     ) {
       rendererView.rendererDelegate = self
       rendererView.translatesAutoresizingMaskIntoConstraints = false
