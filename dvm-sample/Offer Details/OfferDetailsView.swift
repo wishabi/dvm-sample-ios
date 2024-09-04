@@ -161,7 +161,7 @@ class OfferDetailsViewModel: ObservableObject {
 
     var priceString = ""
 
-    if let prePrice = offer.offerDetails?.en?.prePriceText, !prePrice.isEmpty {
+    if let prePrice = offer.offerDetails?.prePriceText, !prePrice.isEmpty {
       priceString.append(prePrice)
       priceString.append(" ")
     }
@@ -174,23 +174,23 @@ class OfferDetailsViewModel: ObservableObject {
 
     var imageURLStrings = [String]()
 
-    if let imageURL = offer.details?.en?.imageURL {
+    if let imageURL = offer.details?.imageURL {
       imageURLStrings.append(imageURL)
     }
 
-    if let additionalImages = offer.details?.en?.additionalMedia.map({ $0.url }) {
+    if let additionalImages = offer.details?.additionalMedia.map({ $0.url }) {
       imageURLStrings.append(contentsOf: additionalImages)
     }
 
     self.init(
       imageURLStrings: imageURLStrings,
       price: priceString.isEmpty == false ? priceString : nil,
-      postPrice: offer.offerDetails?.en?.postPriceText,
+      postPrice: offer.offerDetails?.postPriceText,
       validity: validity,
-      name: offer.details?.en?.name,
-      saleStory: offer.offerDetails?.en?.saleStory,
-      description: offer.details?.en?.description,
-      sku: "SKU: \(offer.details?.en?.additionalInfo?.sku ?? "")",
-      disclaimer: offer.offerDetails?.en?.disclaimer)
+      name: offer.details?.name,
+      saleStory: offer.offerDetails?.saleStory,
+      description: offer.details?.description,
+      sku: "SKU: \(offer.details?.additionalInfo?.sku ?? "")",
+      disclaimer: offer.offerDetails?.disclaimer)
   }
 }

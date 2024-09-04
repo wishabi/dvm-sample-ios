@@ -14,7 +14,7 @@
 		1D6DC5112C80F474006E2920 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6DC50E2C80F474006E2920 /* UIImageView+Extensions.swift */; };
 		1D7F8EDF2C8113700086C944 /* OfferDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F8EDC2C8113700086C944 /* OfferDetailsView.swift */; };
 		1D7F8EE02C8113700086C944 /* OfferDetailsViewHostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F8EDD2C8113700086C944 /* OfferDetailsViewHostController.swift */; };
-		1D8D9EF82C87B59200941198 /* dmv-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8D9EF72C87B59200941198 /* dmv-sdk */; };
+		CD34095B2C87F19D00D1869A /* dmv-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = CD34095A2C87F19D00D1869A /* dmv-sdk */; };
 		CD6965582C5BAADE007E8D73 /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6965572C5BAADE007E8D73 /* BorderedTextField.swift */; };
 		CD69655A2C5BB245007E8D73 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6965592C5BB245007E8D73 /* Style.swift */; };
 		CDA80EB42C3EE22F00319BE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB32C3EE22F00319BE9 /* AppDelegate.swift */; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D8D9EF82C87B59200941198 /* dmv-sdk in Frameworks */,
+				CD34095B2C87F19D00D1869A /* dmv-sdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +170,7 @@
 			);
 			name = "dvm-sample";
 			packageProductDependencies = (
-				1D8D9EF72C87B59200941198 /* dmv-sdk */,
+				CD34095A2C87F19D00D1869A /* dmv-sdk */,
 			);
 			productName = "dvm-sample";
 			productReference = CDA80EB02C3EE22F00319BE9 /* dvm-sample.app */;
@@ -201,7 +201,7 @@
 			);
 			mainGroup = CDA80EA72C3EE22F00319BE9;
 			packageReferences = (
-				1D8D9EF62C87B59200941198 /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */,
+				CD3409592C87F07B00D1869A /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */,
 			);
 			productRefGroup = CDA80EB12C3EE22F00319BE9 /* Products */;
 			projectDirPath = "";
@@ -479,20 +479,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1D8D9EF62C87B59200941198 /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */ = {
+		CD3409592C87F07B00D1869A /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/wishabi/dvm-ios-binaries";
+			repositoryURL = "https://github.com/wishabi/dvm-ios-binaries/";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.0;
+				version = 1.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D8D9EF72C87B59200941198 /* dmv-sdk */ = {
+		CD34095A2C87F19D00D1869A /* dmv-sdk */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1D8D9EF62C87B59200941198 /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */;
+			package = CD3409592C87F07B00D1869A /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */;
 			productName = "dmv-sdk";
 		};
 /* End XCSwiftPackageProductDependency section */

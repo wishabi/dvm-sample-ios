@@ -1,15 +1,14 @@
 {
-  "originHash" : "87475aa21ec9ec2e898cc063303e1a7291eefd6d26ec90a990c5e7251e883aa1",
   "pins" : [
     {
       "identity" : "dvm-ios-binaries",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/wishabi/dvm-ios-binaries",
+      "location" : "https://github.com/wishabi/dvm-ios-binaries/",
       "state" : {
-        "revision" : "1d55d4382aefd14c9722511f917562c1035a7c53",
-        "version" : "1.0.0"
+        "revision" : "71e1fd8dfc2d1cea1f36057355ba963311ad5d72",
+        "version" : "1.0.1"
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
