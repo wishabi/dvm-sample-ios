@@ -37,6 +37,7 @@ class PublicationViewController: UIViewController {
       merchantId: merchantId,
       storeCode: storeCode,
       renderMode: renderingMode,
+      language: Locale.preferredLanguageCode() ?? "en",
       shouldPersistWebsiteDataToDisk: false
     ) {
       rendererView.rendererDelegate = self
