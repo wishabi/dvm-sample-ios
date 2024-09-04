@@ -72,10 +72,9 @@ DVMSDK.initialize(clientToken: "experimental-key-that-is-super-secret-and-secure
 
 ```swift
 /// Retrieves a list of publications and invokes the completion handler with the results.
-/// .
+///
 /// If an error occurs during the process the error of the completion will be non nil and the publication list will be empty.
 ///
-/// Note: Currently the list of publications returned is not live, but hardcoded.
 /// - Parameters:
 ///   - merchantId: Merchant identifier to retrieve the publications for.
 ///   - storeCode: Store identifier for the publications.
