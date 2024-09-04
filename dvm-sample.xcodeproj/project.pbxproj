@@ -14,7 +14,7 @@
 		1D6DC5112C80F474006E2920 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6DC50E2C80F474006E2920 /* UIImageView+Extensions.swift */; };
 		1D7F8EDF2C8113700086C944 /* OfferDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F8EDC2C8113700086C944 /* OfferDetailsView.swift */; };
 		1D7F8EE02C8113700086C944 /* OfferDetailsViewHostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F8EDD2C8113700086C944 /* OfferDetailsViewHostController.swift */; };
-		CD34095B2C87F19D00D1869A /* dmv-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = CD34095A2C87F19D00D1869A /* dmv-sdk */; };
+		1DE10AEE2C88A61D00B0CF08 /* dvm-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 1DE10AED2C88A61D00B0CF08 /* dvm-sdk */; };
 		CD6965582C5BAADE007E8D73 /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6965572C5BAADE007E8D73 /* BorderedTextField.swift */; };
 		CD69655A2C5BB245007E8D73 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6965592C5BB245007E8D73 /* Style.swift */; };
 		CDA80EB42C3EE22F00319BE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA80EB32C3EE22F00319BE9 /* AppDelegate.swift */; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD34095B2C87F19D00D1869A /* dmv-sdk in Frameworks */,
+				1DE10AEE2C88A61D00B0CF08 /* dvm-sdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +170,7 @@
 			);
 			name = "dvm-sample";
 			packageProductDependencies = (
-				CD34095A2C87F19D00D1869A /* dmv-sdk */,
+				1DE10AED2C88A61D00B0CF08 /* dvm-sdk */,
 			);
 			productName = "dvm-sample";
 			productReference = CDA80EB02C3EE22F00319BE9 /* dvm-sample.app */;
@@ -393,7 +393,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = F4L59Q2V96;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flipp.dvmsample.external;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -427,7 +427,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = F4L59Q2V96;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,7 +446,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flipp.dvmsample.external;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -490,10 +490,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CD34095A2C87F19D00D1869A /* dmv-sdk */ = {
+		1DE10AED2C88A61D00B0CF08 /* dvm-sdk */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CD3409592C87F07B00D1869A /* XCRemoteSwiftPackageReference "dvm-ios-binaries" */;
-			productName = "dmv-sdk";
+			productName = "dvm-sdk";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
