@@ -117,7 +117,8 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
     cell.titleLabel.text = publication.details.name
     cell.subtitleLabel.text = "\(publication.details.description)"
     cell.validLabel.text = "Valid: \(dateFormatter.string(from: publication.dates.validFrom)) - \(dateFormatter.string(from: publication.dates.validTo))"
-
+    cell.markDVMAvailable(publication.renderingTypes.contains(where: { $0 == .dvm }))
+    cell.markSFMLAvailable(publication.renderingTypes.contains(where: { $0 == .sfml }))
     return cell
   }
 

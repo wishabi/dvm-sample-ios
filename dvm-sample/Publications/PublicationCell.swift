@@ -87,6 +87,20 @@ class PublicationCell: UITableViewCell {
     return label
   }()
 
+  lazy var sfmlButton: UIButton = {
+    var buttonConfig = UIButton.Configuration.bordered()
+    buttonConfig.title = "View SFML"
+    let sfmlButton = UIButton(configuration: buttonConfig)
+    return sfmlButton
+  }()
+
+  lazy var dvmButton: UIButton = {
+    var buttonConfig = UIButton.Configuration.bordered()
+    buttonConfig.title = "View DVM"
+    let dvmButton = UIButton(configuration: buttonConfig)
+    return dvmButton
+  }()
+
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     selectionStyle = .none
@@ -105,14 +119,8 @@ class PublicationCell: UITableViewCell {
     mainStackView.addArrangedSubview(topStackView)
     mainStackView.addArrangedSubview(buttonsStackView)
 
-    var buttonConfig = UIButton.Configuration.bordered()
-    buttonConfig.title = "View SFML"
-    let sfmlButton = UIButton(configuration: buttonConfig)
     sfmlButton.addTarget(self, action: #selector(didTapSFMLButton), for: .touchUpInside)
 
-    buttonConfig = UIButton.Configuration.bordered()
-    buttonConfig.title = "View DVM"
-    let dvmButton = UIButton(configuration: buttonConfig)
     dvmButton.addTarget(self, action: #selector(didTapDVMButton), for: .touchUpInside)
 
     buttonsStackView.addArrangedSubview(sfmlButton)
@@ -146,5 +154,13 @@ class PublicationCell: UITableViewCell {
 
   @objc private func didTapDVMButton() {
     delegate?.didTapDVMButton(cell: self)
+  }
+
+  public func markSFMLAvailable(_ available: Bool) {
+    sfmlButton.isEnabled = available
+  }
+
+  public func markDVMAvailable(_ available: Bool) {
+    dvmButton.isEnabled = available
   }
 }
