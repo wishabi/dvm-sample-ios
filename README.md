@@ -83,6 +83,8 @@ DVMSDK.initialize(clientToken: "experimental-key-that-is-super-secret-and-secure
 ///   - pageToken: token for pagination, needed to fetch subsequent results.
 ///   - completion: closure that will be called with results.
 ///
+/// New in SDK 1.1.0 update: entity `Publication` now contains `renderingTypes` member, an array of `RenderingType` which indicates the available rendering modes for the publication.
+
 public static func fetchPublicationsList(merchantId: String, storeCode: String, language: String, resultsCount: Int = 10, pageToken: String? = nil, completion: @escaping PublicationsListCompletion) throws
 ```
 
