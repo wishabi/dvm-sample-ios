@@ -107,7 +107,8 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
     cell.delegate = self
 
     let publication = publications[indexPath.row]
-    if let url = URL(string: publication.details.imageURL) {
+    if let urlString = publication.details.imageURL,
+       let url = URL(string: urlString) {
       cell.cellImageView.loadImage(from: url)
       cell.cellImageView.isHidden = false
     } else {
@@ -115,7 +116,11 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
       cell.cellImageView.isHidden = true
     }
     cell.titleLabel.text = publication.details.name
-    cell.subtitleLabel.text = "\(publication.details.description)"
+    if let description = publication.details.description {
+      cell.subtitleLabel.text = description
+    } else {
+      cell.subtitleLabel.text = ""
+    }
     cell.validLabel.text = "Valid: \(dateFormatter.string(from: publication.dates.validFrom)) - \(dateFormatter.string(from: publication.dates.validTo))"
     cell.markDVMAvailable(publication.renderingTypes.contains(where: { $0 == .dvm }))
     cell.markSFMLAvailable(publication.renderingTypes.contains(where: { $0 == .sfml }))
