@@ -178,7 +178,7 @@ class OfferDetailsViewModel: ObservableObject {
       imageURLStrings.append(imageURL)
     }
 
-    if let additionalImages = offer.details?.additionalMedia.map({ $0.url }) {
+    if let additionalImages = offer.details?.additionalMedia?.compactMap({ $0.url }) {
       imageURLStrings.append(contentsOf: additionalImages)
     }
 
@@ -190,7 +190,7 @@ class OfferDetailsViewModel: ObservableObject {
       name: offer.details?.name,
       saleStory: offer.offerDetails?.saleStory,
       description: offer.details?.description,
-      sku: "SKU: \(offer.details?.additionalInfo?.sku ?? "")",
+      sku: "SKU: \(offer.details?.additionalInfo["sku"] ?? "")",
       disclaimer: offer.offerDetails?.disclaimer)
   }
 }
