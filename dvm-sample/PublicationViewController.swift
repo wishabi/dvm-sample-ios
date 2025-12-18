@@ -69,6 +69,10 @@ class PublicationViewController: UIViewController {
 }
 
 extension PublicationViewController: DVMRendererDelegate {
+  func didFinishLoad(legacyMap: [String : String]) {
+    // publication finished loading
+  }
+  
   func didTap(result: Result<dvm_sdk.Offer, dvm_sdk.DVMSDKError>) {
     switch result {
     case .success(let offer):
