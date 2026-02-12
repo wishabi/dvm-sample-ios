@@ -7,7 +7,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   // This is the key that will be used to initialize the SDK, please replace the value with the key provided by Flipp.
-  private let SDKKey = "super-duper-secret-flipp-client-testing-integration-key-abc123"
+  private let SDKKey = ""
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
