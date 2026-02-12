@@ -127,6 +127,10 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
     } else {
       cell.validLabel.text = ""
     }
+
+    let tags = publication.tags.joined(separator: ", ")
+    cell.tagsLabel.text = "Tags: \(tags.isEmpty ? "No tags" : tags)"
+    
     cell.markDVMAvailable(publication.renderingTypes.contains(where: { $0 == .dvm }))
     cell.markSFMLAvailable(publication.renderingTypes.contains(where: { $0 == .sfml }))
     return cell

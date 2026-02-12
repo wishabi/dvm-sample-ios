@@ -87,6 +87,14 @@ class PublicationCell: UITableViewCell {
     return label
   }()
 
+  lazy var tagsLabel: UILabel = {
+    let label = UILabel()
+    label.numberOfLines = 0
+    label.font = UIFont.systemFont(ofSize: 14)
+    label.textColor = .default5
+    return label
+  }()
+
   lazy var sfmlButton: UIButton = {
     var buttonConfig = UIButton.Configuration.bordered()
     buttonConfig.title = "View SFML"
@@ -132,6 +140,7 @@ class PublicationCell: UITableViewCell {
     infoContainerStackView.addArrangedSubview(titleLabel)
     infoContainerStackView.addArrangedSubview(subtitleLabel)
     infoContainerStackView.addArrangedSubview(validLabel)
+    infoContainerStackView.addArrangedSubview(tagsLabel)
     setupConstraints()
   }
 
