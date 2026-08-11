@@ -18,6 +18,7 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
   var publications: [Publication] = []
   var merchantID: String?
   var storeCode: String?
+  var renderOptions = RenderOptions(disableZoom: false, linkedOfferId: nil, postalCode: nil, countryCode: nil)
 
   let tableView: UITableView = {
     let tableView = UITableView()
@@ -141,6 +142,7 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
     publicationVC.merchantId = self.merchantID
     publicationVC.storeCode = self.storeCode
     publicationVC.renderingMode = mode
+    publicationVC.renderOptions = self.renderOptions
     navigationController?.pushViewController(publicationVC, animated: true)
   }
 }
