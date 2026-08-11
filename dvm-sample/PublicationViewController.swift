@@ -34,8 +34,7 @@ class PublicationViewController: UIViewController {
 
     if let rendererView = try? DVMSDK.createRenderingView(
       publicationId: publicationID,
-      merchantId: merchantId,
-      storeCode: storeCode,
+      publicationInfo: .byMerchant(merchantId: merchantId, storeCode: storeCode),
       renderMode: renderingMode,
       language: Locale.preferredLanguageCode() ?? "en",
       shouldPersistWebsiteDataToDisk: false
@@ -73,7 +72,7 @@ extension PublicationViewController: DVMRendererDelegate {
     // publication finished loading
   }
   
-  func didTap(result: Result<dvm_sdk.Offer, dvm_sdk.DVMSDKError>) {
+  func didTap(result: Result<Offer, DVMSDKError>) {
     switch result {
     case .success(let offer):
       self.pushDetailsController(for: offer)

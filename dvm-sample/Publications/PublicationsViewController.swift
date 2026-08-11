@@ -15,7 +15,7 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
     return dateFormatter
   }()
 
-  var publications: PublicationsList?
+  var publications: [Publication] = []
   var merchantID: String?
   var storeCode: String?
 
@@ -84,22 +84,19 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
   // MARK: - UITableViewDataSource
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    guard publications != nil else {
+    guard !publications.isEmpty else {
       return nil
     }
     let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionHeader") as? SectionHeader
-    view?.label.text = "\(publications?.publications.count ?? 0) publication(s)"
+    view?.label.text = "\(publications.count) publication(s)"
     return view
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return publications?.publications.count ?? 0
+    return publications.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let publications = publications?.publications else {
-      return UITableViewCell()
-    }
     guard let cell = tableView.dequeueReusableCell(withIdentifier: PublicationCell.reuseIdentifier, for: indexPath) as? PublicationCell else {
       fatalError("Bad cell")
     }
@@ -107,7 +104,7 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
     cell.delegate = self
 
     let publication = publications[indexPath.row]
-    if let urlString = publication.details?.imageURL,
+    if let urlString = publication.imageURL,
        let url = URL(string: urlString) {
       cell.cellImageView.loadImage(from: url)
       cell.cellImageView.isHidden = false
@@ -115,14 +112,14 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
       cell.cellImageView.image = nil
       cell.cellImageView.isHidden = true
     }
-    cell.titleLabel.text = publication.details?.name ?? ""
-    if let description = publication.details?.description {
+    cell.titleLabel.text = publication.name ?? ""
+    if let description = publication.description {
       cell.subtitleLabel.text = description
     } else {
       cell.subtitleLabel.text = ""
     }
-    if let validFrom = publication.dates?.validFrom,
-       let validTo = publication.dates?.validTo {
+    if let validFrom = publication.validFrom,
+       let validTo = publication.validTo {
       cell.validLabel.text = "Valid: \(dateFormatter.string(from: validFrom)) - \(dateFormatter.string(from: validTo))"
     } else {
       cell.validLabel.text = ""
@@ -140,7 +137,7 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
 
   private func showPublication(_ publication: Publication, mode: RenderMode) {
     let publicationVC = PublicationViewController()
-    publicationVC.publicationID = publication.globalID
+    publicationVC.publicationID = publication.id
     publicationVC.merchantId = self.merchantID
     publicationVC.storeCode = self.storeCode
     publicationVC.renderingMode = mode
@@ -154,8 +151,7 @@ extension PublicationsViewController: PublicationCellDelegate {
       return
     }
 
-    guard let publications = publications?.publications,
-          indexPath.row < publications.count else {
+    guard indexPath.row < publications.count else {
       return
     }
 
@@ -167,8 +163,7 @@ extension PublicationsViewController: PublicationCellDelegate {
       return
     }
 
-    guard let publications = publications?.publications,
-          indexPath.row < publications.count else {
+    guard indexPath.row < publications.count else {
       return
     }
 
