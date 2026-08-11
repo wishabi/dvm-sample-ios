@@ -484,7 +484,7 @@
 			repositoryURL = "https://github.com/wishabi/dvm-ios-binaries/";
 			requirement = {
 				kind = exactVersion;
-				version = 2.1.6;
+				version = 3.5.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
