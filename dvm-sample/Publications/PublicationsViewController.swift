@@ -49,12 +49,14 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
   }
 
   @objc private func fetchPublications() {
-    guard let merchantID, let storeCode else { return }
+    guard let merchantID else { return }
 
     tableView.refreshControl?.beginRefreshing()
 
-    Task.detached {
+    Task.detached { [storeCode] in
       do {
+        // storeCode is optional: when nil, all of the merchant's publications are returned
+        // (useful when the publication is rendered by location rather than by store).
         let publications = try await DVMSDK.fetchPublicationsList(
           merchantId: merchantID,
           storeCode: storeCode,

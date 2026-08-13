@@ -128,12 +128,19 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
   }
 
   @objc func loadPublicationsButtonTapped() {
-    guard let merchant = nonEmpty(merchantTextField),
-          let storeCode = nonEmpty(storeCodeTextField) else {
-      let alert = UIAlertController(title: "Error", message: "Please fill in merchant and store code", preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-      present(alert, animated: true, completion: nil)
-      return
+    let postalCode = nonEmpty(postalCodeTextField)
+    let countryCode = nonEmpty(countryCodeTextField)
+    // A postal + country code renders the publication by location, which doesn't need a store.
+    let rendersByLocation = postalCode != nil && countryCode != nil
+    let storeCode = nonEmpty(storeCodeTextField)
+
+    // Merchant is always required to list publications; store code is only required when the
+    // publication will be rendered by merchant (i.e. no postal/country location was provided).
+    guard let merchant = nonEmpty(merchantTextField) else {
+      return presentValidationError("Please enter a merchant")
+    }
+    guard rendersByLocation || storeCode != nil else {
+      return presentValidationError("Enter a store code, or a postal code + country code to render by location")
     }
 
     let publicationsViewController = PublicationsViewController()
@@ -142,9 +149,15 @@ class InitialViewController: UIViewController, UITextFieldDelegate {
     publicationsViewController.renderOptions = RenderOptions(
       disableZoom: disableZoomSwitch.isOn,
       linkedOfferId: nonEmpty(linkedOfferTextField),
-      postalCode: nonEmpty(postalCodeTextField),
-      countryCode: nonEmpty(countryCodeTextField))
+      postalCode: postalCode,
+      countryCode: countryCode)
     navigationController?.navigationBar.barTintColor = .default0
     navigationController?.pushViewController(publicationsViewController, animated: true)
+  }
+
+  private func presentValidationError(_ message: String) {
+    let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    present(alert, animated: true, completion: nil)
   }
 }
