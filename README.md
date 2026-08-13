@@ -70,19 +70,27 @@ DVMSDK.initialize(clientToken: "your-flipp-provided-key", userId: nil)
 ```swift
 /// - Parameters:
 ///   - merchantId: Merchant identifier to retrieve the publications for.
-///   - storeCode: Store identifier for the publications.
+///   - storeCode: Optional store identifier used to filter the results. Pass `nil`
+///     to retrieve the merchant's publications without filtering by store (useful
+///     when the publication will be rendered by location rather than by store).
 ///   - language: The 2 character ISO language code.
 ///   - resultsCount: number of results per page, defaults to 10.
 ///   - pageToken: token for pagination, needed to fetch subsequent results.
 /// - Returns: A list of `Publication`.
 public static func fetchPublicationsList(
   merchantId: String,
-  storeCode: String,
+  storeCode: String? = nil,
   language: String?,
   resultsCount: Int = 10,
   pageToken: String? = nil
 ) async throws -> [Publication]
 ```
+
+> [!NOTE]
+>
+> `merchantId` is always required to list publications; `storeCode` is an optional
+> filter. When you intend to render a publication **by location**, you can list
+> without a store and provide the postal/country code at render time.
 
 A `Publication` exposes `id`, `merchantId`, `name`, `description`, `imageURL`,
 `validFrom`, `validTo`, `language`, `tags`, and `renderingTypes` (`[RenderingType]`,
@@ -180,7 +188,8 @@ demonstrates the newer capabilities. All of these are shown end-to-end in
 
 - **Location-based rendering** — provide a postal code + country code and the
   renderer is created with `PublicationInfo.byLocation(postalCode:countryCode:)`
-  instead of `.byMerchant(...)`.
+  instead of `.byMerchant(...)`. In this mode a **store code is not required** — only
+  the merchant (to list publications) plus the postal/country code are needed.
 - **Disable zoom** — pass `disableZoom: true` to `createRenderingView` to turn
   off pinch-to-zoom.
 - **Linked offer** — pass `linkedOfferId:` to guarantee a specific offer is
