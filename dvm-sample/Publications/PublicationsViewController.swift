@@ -53,14 +53,30 @@ class PublicationsViewController: UIViewController, UITableViewDataSource, UITab
 
     tableView.refreshControl?.beginRefreshing()
 
-    Task.detached { [storeCode] in
+    let storeCode = self.storeCode
+    let postalCode = renderOptions.postalCode
+    let countryCode = renderOptions.countryCode
+    let language = Locale.preferredLanguageCode() ?? "en"
+
+    Task.detached {
       do {
-        // storeCode is optional: when nil, all of the merchant's publications are returned
-        // (useful when the publication is rendered by location rather than by store).
-        let publications = try await DVMSDK.fetchPublicationsList(
-          merchantId: merchantID,
-          storeCode: storeCode,
-          language: Locale.preferredLanguageCode() ?? "en")
+        let publications: [Publication]
+        if let postalCode, let countryCode {
+          // Location-based listing: fetch the merchant's publications near a postal
+          // code, no store required.
+          publications = try await DVMSDK.fetchPublicationsList(
+            merchantId: merchantID,
+            postalCode: postalCode,
+            countryCode: countryCode,
+            language: language)
+        } else {
+          // Store-based listing. storeCode is optional: when nil, all of the merchant's
+          // publications are returned.
+          publications = try await DVMSDK.fetchPublicationsList(
+            merchantId: merchantID,
+            storeCode: storeCode,
+            language: language)
+        }
         await MainActor.run { [weak self] in
           self?.tableView.refreshControl?.endRefreshing()
           self?.publications = publications
