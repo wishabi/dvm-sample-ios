@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/wishabi/dvm-ios-binaries/",
       "state" : {
-        "revision" : "f06ea9993ce35d34ac76cb7bbab7ee84748c05f1",
-        "version" : "3.6.0"
+        "revision" : "c2f49d5e702b0bb00a43c7cd23c93d26f50c2991",
+        "version" : "3.7.0"
       }
     }
   ],
