@@ -211,12 +211,18 @@ demonstrates the newer capabilities. All of these are shown end-to-end in
 - **Promotions** — handle `didTapPromotion(result:)`,
   `publicationScrollToPromotionResponse(_:)`, and
   `publicationPromotionImpression(ids:)`. Promotions are delivered as the
-  `Promotion` value type.
+  `Promotion` value type, which includes an optional `url` property for
+  external-link promotions. When `url` is present, open it on tap to navigate
+  to the promotion's destination (e.g. a merchant's website).
 - **Through-the-merchant (TTM) links** — handle `didTapTTM(url:)` to open the
   destination URL.
 - **Scroll telemetry** — `publicationDidScroll(contentOffset:contentSize:viewportHeight:)`,
   `publicationDidEndDragging(willDecelerate:)`, and
   `publicationDidEndDecelerating()`.
+- **Horizontal scroll detection** — `publicationHorizontalScrollDidChange(isScrolling:)`
+  fires when the user starts or ends a touch on a horizontally-scrollable element
+  inside the publication (e.g. a carousel). Use this to suspend competing
+  horizontal gestures (like page-turn swipes) so the two don't conflict.
 
 ## Delegate Methods <a name="delegate-methods"></a>
 
@@ -270,6 +276,10 @@ public protocol DVMRendererDelegate: AnyObject {
 
   /// Called when the scroll view finishes decelerating.
   func publicationDidEndDecelerating()
+
+  /// Called when the user starts or ends a touch on a horizontally-scrollable
+  /// element inside the publication (e.g. a carousel).
+  func publicationHorizontalScrollDidChange(isScrolling: Bool)
 
   /// Called when the publication's hydration returns post-processing strategy results
   /// (e.g. the offer-linking strategy used when a `linkedOfferId` is provided).

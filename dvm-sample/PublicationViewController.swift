@@ -162,6 +162,10 @@ extension PublicationViewController: DVMRendererDelegate {
     switch result {
     case .success(let promotion):
       setStatus("Tapped promotion: \(promotion.name ?? promotion.id)")
+      // Open external-link URL if available (SDK 3.8.0+)
+      if let urlString = promotion.url, let url = URL(string: urlString) {
+        UIApplication.shared.open(url)
+      }
     case .failure(let error):
       setStatus("Promotion tap error: \(error.localizedDescription)")
     }
@@ -210,5 +214,11 @@ extension PublicationViewController: DVMRendererDelegate {
 
   func publicationDidEndDecelerating() {
     Self.logger.debug("Did end decelerating")
+  }
+
+  // MARK: Horizontal scroll
+
+  func publicationHorizontalScrollDidChange(isScrolling: Bool) {
+    setStatus(isScrolling ? "Horizontal scrolling..." : "Horizontal scroll ended")
   }
 }
